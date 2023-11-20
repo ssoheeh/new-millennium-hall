@@ -7,7 +7,7 @@ public class PlayerShooting : MonoBehaviour
 {
     public GameObject prefab;
     public GameObject shootPoint;
-
+    public GameObject flame;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +29,10 @@ public class PlayerShooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector3 spot = GameObject.Find("Player").transform.position;
+      
+        flame.transform.position = new Vector3(spot.x, spot.y + 120, spot.z);
+
         /*if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             //Instantiate(prefab,transform.position, transform.rotation);
@@ -36,6 +40,6 @@ public class PlayerShooting : MonoBehaviour
             clone.transform.position = shootPoint.transform.position;
             clone.transform.rotation = shootPoint.transform.rotation;
         }*/
-        
+
     }
 }

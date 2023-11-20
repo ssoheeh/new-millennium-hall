@@ -29,5 +29,6 @@ public class ContactDamager : MonoBehaviour
         {
             life.amount -= damage;
         }
+       
     }
 }
