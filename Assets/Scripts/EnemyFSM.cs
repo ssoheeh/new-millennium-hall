@@ -30,6 +30,17 @@ public class EnemyFSM : MonoBehaviour
             Instantiate(bulletPrefab, transform.position, Quaternion.Euler(0, 180, 0));
         }
     }
+    void ShootBase()
+    {
+        var timeSinceLastShoot = Time.time - lastShootTime;
+        if (timeSinceLastShoot > fireRate)
+        {
+            lastShootTime = Time.time;
+
+
+            Instantiate(bulletPrefab, transform.position, transform.rotation);
+        }
+    }
 
     void LookTo(Vector3 targetPosition)
     {
@@ -96,20 +107,17 @@ public class EnemyFSM : MonoBehaviour
     {
         agent.isStopped = true;
         LookTo(baseTransform.position);
-        Shoot();
+        ShootBase();
         //print("AttackBase");
     }
-    void ChangeState()
-    {
-        currentState = EnemyState.GoToBase;
-    }
+   
     void ChasePlayer()
     {
         agent.isStopped = false;
 
         if (sightSensor.detectedObject == null)
         {
-            // sightSensor.detectedObject가 null이면서 5초가 지났을 때
+            // sightSensor.detectedObject가 null이면서 10초가 지났을 때
             if (Time.time - lastDetectionTime > 10f)
             {
                 currentState = EnemyState.GoToBase;

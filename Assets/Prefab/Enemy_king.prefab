@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8220592091484905079}
   - component: {fileID: 671985625300082473}
-  - component: {fileID: 7851384757412392238}
+  - component: {fileID: 7116468919066658910}
   m_Layer: 7
   m_Name: AI
   m_TagString: Untagged
@@ -54,7 +54,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   detectedObject: {fileID: 0}
---- !u!114 &7851384757412392238
+--- !u!114 &7116468919066658910
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -63,13 +63,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1333108448659309374}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd8ddf09a29a980458481f55ea62778a, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ef792da4e5f4d14785b04053eeae5b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
   sightSensor: {fileID: 671985625300082473}
   baseTransform: {fileID: 0}
-  baseAttackDistance: 500
+  baseAttackDistance: 800
   playerAttackDistance: 300
   lastShootTime: 0
   bulletPrefab: {fileID: 8722750543468131330, guid: 6b85b0a4f4056084996349ead046caf0,
